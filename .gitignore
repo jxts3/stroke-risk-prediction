@@ -1,0 +1,22 @@
+# Raw data - large files, regeneratable via Synthea, not needed in repo
+data/raw/
+data/raw_sample100/
+
+# Trained model artifacts - regeneratable from notebook, can be large
+data/processed/*.pkl
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+anaconda_projects/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.venv/
+venv/
+
+# Local tool config - not needed in a public portfolio repo
+.claude/
+claude.md
