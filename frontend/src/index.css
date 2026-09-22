@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Orbitron', sans-serif;
+  --font-heading: 'Rajdhani', sans-serif;
+
+  --color-obsidian: #0b0e14;
+  --color-obsidian-deep: #080a0f;
+  --color-card: rgb(17 24 39 / 0.8);
+  --color-grid-line: #1e293b;
+
+  --color-danger: #ff3b30;
+  --color-safe: #10b981;
+  --color-moderate: #f59e0b;
+  --color-cyan: #00f2fe;
+
+  --color-text-primary: #f9fafb;
+  --color-text-muted: #9ca3af;
+  --color-text-dim: #64748b;
+
+  --animate-slide-down: slideDown 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0s both;
+  --animate-scale-in: scaleIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
+  --animate-slide-left: slideLeft 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
+  --animate-slide-right: slideRight 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.45s both;
+  --animate-pulse-glow: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-text-primary font-sans;
+    background-image:
+      linear-gradient(var(--color-grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-grid-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100svh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-down,
+  .animate-scale-in,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-pulse-glow {
+    animation: none !important;
+  }
+}
+
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+
+  body {
+    background: white !important;
+  }
+}
