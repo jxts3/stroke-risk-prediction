@@ -7,3 +7,9 @@ frontend/dist/
 .DS_Store
 .vscode/
 .env
+
+data/raw/
+anaconda_projects/
+*.db
+.claude/
+.ipynb_checkpoints/
