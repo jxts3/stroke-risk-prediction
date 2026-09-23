@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000/predict'
+const API_URL = 'https://stroke-risk-api.onrender.com/predict'
 
 export async function predict(inputs) {
   const res = await fetch(API_URL, {
